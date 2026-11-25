@@ -1,0 +1,226 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #101020, #1b1635, #111827);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.tagline {
+    color: #a78bfa;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: #a78bfa;
+}
+
+.subtitle {
+    color: #aaa8bd;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.score-card {
+    flex: 1;
+    background: #24223a;
+    padding: 16px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: 0.3s;
+}
+
+.score-card.active {
+    border-color: #a78bfa;
+    background: #30294c;
+    transform: translateY(-3px);
+}
+
+.player-symbol {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#playerX .player-symbol {
+    color: #38bdf8;
+}
+
+#playerO .player-symbol {
+    color: #f472b6;
+}
+
+.player-name {
+    font-size: 11px;
+    color: #b9b5ce;
+    letter-spacing: 2px;
+}
+
+.score {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.game-area {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+    padding: 25px;
+}
+
+.game-status {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    color: #ddd6fe;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: 1px solid #494263;
+    border-radius: 14px;
+    background: #292640;
+    color: white;
+    font-family: inherit;
+    font-size: 55px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cell:hover:not(:disabled) {
+    background: #393352;
+    border-color: #a78bfa;
+    transform: scale(1.04);
+}
+
+.cell:disabled {
+    cursor: not-allowed;
+}
+
+.cell.x {
+    color: #38bdf8;
+}
+
+.cell.o {
+    color: #f472b6;
+}
+
+.cell.winner {
+    background: #45366d;
+    border: 2px solid #a78bfa;
+}
+
+.result {
+    min-height: 28px;
+    margin-top: 20px;
+    color: #c4b5fd;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.buttons button {
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.reset-btn {
+    background: #8b5cf6;
+    color: white;
+}
+
+.reset-btn:hover {
+    background: #7c3aed;
+    transform: translateY(-2px);
+}
+
+.restart-btn {
+    background: #343149;
+    color: #ddd6fe;
+    border: 1px solid #55506e !important;
+}
+
+.restart-btn:hover {
+    background: #45405f;
+}
+
+footer {
+    margin-top: 25px;
+    color: #77738f;
+    font-size: 13px;
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    .game-area {
+        padding: 18px;
+    }
+
+    .cell {
+        font-size: 43px;
+    }
+}
